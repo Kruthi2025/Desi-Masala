@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Desi Dishes</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("rice.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  section img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  #image-preview-1 img,
+  #image-preview-2 img,
+  #image-preview-3 img,
+  #image-preview-4 img,
+  #image-preview-5 img,
+  #image-preview-6 img {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 10px;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Rice</h1>
+    </header>
+    <main>
+      <section id="recipe1">
+        <h2>Palak Rice</h2>
+        <img src="palak.jpeg" alt="Butter Chicken">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li>Fresh spinach (palak), washed and chopped</li>
+          <li>Basmati rice, rinsed and drained</li>
+          <li>Onion, finely chopped</li>
+          <li>Tomato, chopped</li>
+          <li>Ginger-garlic paste</li>
+          <li>Green chilies</li>
+          <li>Garam masala powder</li>
+          <li>Salt to taste</li>
+          <li>Oil or ghee for cooking</li>
+          <li>Spices (cumin, coriander, chili powder)</li>
+        </ul>
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Blanch spinach, blend to make puree.</li>
+          <li>Sauté whole spices, onions, ginger-garlic paste, and tomatoes.</li>
+          <li>Add spinach puree, turmeric, garam masala, and salt.</li>
+          <li>Mix in rinsed rice and water (1:2 ratio).</li>
+          <li>Cook covered until rice is tender (15-20 mins).</li>
+          <li>Garnish with fresh cream and serve hot.</li>
+        </ol>
+      </section>
+
+      <section id="recipe2">
+        <h2>Ghee Rice</h2>
+        <img src="ghee rice.jpeg" alt="Palak Paneer">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li>Basmati rice, rinsed and drained</li>
+          <li>Ghee (clarified butter)</li>
+          <li>Onions</li>
+          <li>Cashew nuts or almonds</li>
+          <li>Raisins</li>
+          <li>Salt to taste</li>
+          <li>Spices (cumin, coriander, chili powder, garam masala)</li>
+        </ul>
+        <h3>Instructions:</h3>
+        <ol>
+          Rinse basmati rice until the water runs clear, then soak for 20-30 minutes, if possible.In a pot, heat ghee over medium heat.
+          Add whole spices (cinnamon stick, cloves, cardamom pods, and bay leaves) and sauté until fragrant.
+          Add thinly sliced onions and sauté until golden brown.
+          Drain the soaked rice and add it to the pot. Stir gently to coat the rice with ghee and spices.
+          Add water or vegetable broth (usually in a 1:2 ratio of rice to water) and salt to taste.
+          Bring the mixture to a boil, then reduce the heat to low, cover the pot, and let the rice cook until tender and the water is absorbed, about 15-20 minutes.
+          While the rice is cooking, you can optionally fry cashew nuts or almonds in ghee until golden and plump, and fry raisins until they puff up.
+          Once the rice is cooked, fluff it gently with a fork and remove from heat.
+          Garnish the ghee rice with the fried nuts and raisins, if using, before serving.
+        </ol>
+      </section>
+
+      <section id="recipe3">
+        <h2>Veg Fried Rice</h2>
+        <img src="veg.jpeg" alt="Chana Masala">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li>Cooked rice</li>
+          <li>Assorted vegetables</li>          
+          <li>Onions</li>
+          <li>Garlic</li>
+          <li>Ginger</li>
+          <li>Soy sauce</li>
+          <li>Vegetable oil</li>
+          <li>Salt and pepper to taste</li>
+          <li>Spices (cumin, coriander, garam masala)</li>
+        </ul>
+        <h3>Instructions:</h3>
+        <ol>
+          Heat vegetable oil in a large skillet or wok over medium-high heat.
+          Add chopped onions and sauté until translucent.
+          Add minced garlic and ginger, and cook until fragrant.
+          Add chopped vegetables and stir-fry until they are tender-crisp.
+          Push the vegetables to the side of the pan and add the cooked rice to the center.
+          Pour soy sauce and sesame oil over the rice and toss everything together until well combined.
+          If using, push the rice and vegetables to one side of the pan and scramble eggs on the empty side.
+          Once the eggs are cooked, mix them into the rice and vegetable mixture.
+          Season with salt and pepper to taste.
+          Optional: Garnish with chopped green onions before serving.
+        </ol>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Indian Recipe Book</p>
+    </footer>
+    <script>
+      // JavaScript code to handle image upload and preview
+      const imageUploads = document.querySelectorAll('input[type="file"]');
+      const imagePreviews = document.querySelectorAll('div[id^="image-preview-"]');
+
+      imageUploads.forEach((imageUpload, index) => {
+        imageUpload.addEventListener('change', () => {
+          imagePreviews[index].innerHTML = '';
+          const files = imageUpload.files;
+          for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const reader = new FileReader();
+            reader.onload = () => {
+              const img = document.createElement('img');
+              img.src = reader.result;
+              imagePreviews[index].appendChild(img);
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>                                                                                     

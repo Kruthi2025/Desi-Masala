@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Desi Masala</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("noodle1.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+  
+  header {
+    background-color: burlywood;
+    color:black;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  section img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  #image-preview-1 img,
+  #image-preview-2 img,
+  #image-preview-3 img,
+  #image-preview-4 img,
+  #image-preview-5 img,
+  #image-preview-6 img {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 10px;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Noodles</h1>
+    </header>
+    <main>
+      <section id="recipe1">
+        <h2>Veg Noodles</h2>
+        <img src="gobi.jpeg" alt="Butter Chicken">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li>Noodles</li>
+          <li>Assorted vegetables (carrots, bell peppers, cabbage, etc.), sliced thinly</li>
+          <li>Soy sauce</li>
+          <li>Red chili powder</li>
+          <li>Salt</li>
+          <li>Garlic</li>
+          <li>Ginger</li>
+          <li>Capsicum</li>
+          <li>Onion</li>
+          <li>Tomato ketchup</li>
+          <li>Chili sauce</li>
+          <li>Pepper</li>
+        </ul>
+        <h3>Instructions:</h3>
+        <ol>
+            Cook noodles according to package instructions. Drain and set aside.
+            In a pan, heat oil. Add minced garlic and ginger, sauté until fragrant.
+            Add sliced onions, cook until translucent.
+            Add assorted vegetables, stir-fry until tender yet crisp.
+            Toss in cooked noodles.
+            Season with soy sauce, chili sauce, vinegar, salt, and pepper to taste.
+            Stir well to combine.
+            Serve hot.
+        </ol>
+      </section>
+
+      <section id="recipe2">
+        <h2>Schezwan Noodles</h2>
+        <img src="baby corn.jpeg" alt="Palak Paneer">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li>Noodles</li>
+          <li>Mixed vegetables (carrots, bell peppers, cabbage, etc.), sliced thinly</li>
+          <li>Soy sauce</li>
+          <li>Schezwan sauce</li>
+          <li>Salt</li>
+          <li>Garlic</li>
+          <li>Ginger</li>
+          <li>Capsicum</li>
+          <li>Onion</li>
+          <li>Tomato ketchup</li>
+          <li>Chili sauce</li>
+          <li>Pepper</li>
+        </ul>
+        <h3>Instructions:</h3>
+        <ol>
+            Cook noodles according to package instructions. Drain and set aside.
+            Heat oil in a pan. Add minced garlic and ginger. Sauté until fragrant.
+            Add sliced onion and stir-fry until translucent.
+            Add mixed vegetables and cook until tender yet crisp.
+            Mix in schezwan sauce and soy sauce. Stir well.
+            Add cooked noodles to the pan. Toss everything together until noodles are coated evenly with the sauce.
+            Season with salt and pepper to taste.
+            Garnish with chopped spring onions.
+            Serve hot.
+        </ol>
+      </section>       
+    </main>
+    <footer>
+      <p>&copy; 2024 Desi Masala</p>
+    </footer>
+    <script>
+      // JavaScript code to handle image upload and preview
+      const imageUploads = document.querySelectorAll('input[type="file"]');
+      const imagePreviews = document.querySelectorAll('div[id^="image-preview-"]');
+
+      imageUploads.forEach((imageUpload, index) => {
+        imageUpload.addEventListener('change', () => {
+          imagePreviews[index].innerHTML = '';
+          const files = imageUpload.files;
+          for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const reader = new FileReader();
+            reader.onload = () => {
+              const img = document.createElement('img');
+              img.src = reader.result;
+              imagePreviews[index].appendChild(img);
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>                                                                                     

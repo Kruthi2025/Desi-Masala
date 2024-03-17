@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Desi Masala</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("soup.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  section img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  #image-preview-1 img,
+  #image-preview-2 img,
+  #image-preview-3 img,
+  #image-preview-4 img,
+  #image-preview-5 img,
+  #image-preview-6 img {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 10px;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Soups</h1>
+    </header>
+    <main>
+      <section id="recipe1">
+        <h2>Tomato Soup</h2>
+        <img src="tomato soup.jpeg" alt="Butter Chicken">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li>Tomato</li>
+          <li>Onion</li>
+          <li>Garlic</li>
+          <li>Cream</li>
+          <li>Olive oil</li>
+        </ul>
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Sauté chopped onion and minced garlic in olive oil until softened.</li>
+          <li>Add chopped tomatoes and cook until they break down.</li>
+          <li>Blend the mixture until smooth.</li>
+          <li>Return to the pot, add vegetable broth, and simmer.</li>
+          <li>Season with salt, pepper, and sugar (optional).</li>
+          <li>Serve hot with garnishes like basil leaves, cream, or grated cheese.</li>
+        </ol>
+      </section>
+
+      <section id="recipe2">
+        <h2>Veg Soup</h2>
+        <img src="veg soup.jpeg" alt="Palak Paneer">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li>Assorted vegetables</li>
+          <li>Vegetable broth or water</li>
+          <li>Olive oil or butter </li>
+          <li>Garlic</li>
+          <li>Herbs and spices</li>
+        </ul>
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Sauté assorted veggies in olive oil.</li>
+          <li>Add vegetable broth or water and simmer until veggies are tender.</li>
+          <li>Season with herbs, spices, salt, and pepper.</li>
+          <li>Optionally, blend for a smoother consistency.</li>
+          <li>Serve hot and enjoy!</li>
+        </ol>
+      </section>
+
+      <section id="recipe3">
+        <h2>Veg and Sweet Corn Soup</h2>
+        <img src="corn soup.jpeg" alt="Chana Masala">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li>Sweet corn kernels</li>
+          <li>Assorted vegetables</li>
+          <li>Vegetable broth or water</li>
+          <li>Olive oil or butter </li>
+          <li>Garlic and Ginger</li>
+          <li>Soy sauce</li>
+          <li>Cornstarch</li>
+          <li>Salt and pepper</li>
+          <li>Spring onion</li>
+        </ul>
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Soak and cook the chickpeas until tender.</li>
+          <li>In a pan, sauté onions, garlic, and ginger.</li>
+          <li>Add tomatoes and spices, and cook until tomatoes are soft.</li>
+          <li>Add the cooked chickpeas to the mixture and simmer for 10-15 minutes.</li>
+          <li>Adjust seasoning and add water if needed.</li>
+          <li>Garnish with fresh coriander and serve hot with naan or rice.</li>
+        </ol>
+      </section>       
+    </main>
+    <footer>
+      <p>&copy; 2024 Desi Masala</p>
+    </footer>
+    <script>
+      // JavaScript code to handle image upload and preview
+      const imageUploads = document.querySelectorAll('input[type="file"]');
+      const imagePreviews = document.querySelectorAll('div[id^="image-preview-"]');
+
+      imageUploads.forEach((imageUpload, index) => {
+        imageUpload.addEventListener('change', () => {
+          imagePreviews[index].innerHTML = '';
+          const files = imageUpload.files;
+          for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const reader = new FileReader();
+            reader.onload = () => {
+              const img = document.createElement('img');
+              img.src = reader.result;
+              imagePreviews[index].appendChild(img);
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>                                                                                     
